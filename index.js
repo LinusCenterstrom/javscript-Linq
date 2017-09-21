@@ -1,4 +1,4 @@
-var toDictionary = function (items, keySelector, itemSelector) {
+var toDictionary = function (items, keySelector, itemSelector, skipMissingKeys) {
   if(!keySelector)
     throw "Missin keySelector";
   
@@ -10,7 +10,12 @@ var toDictionary = function (items, keySelector, itemSelector) {
   {
     var key = keySelector(items[i]);
     if(key === undefined)
-      throw "Missing key at" + items[i];
+	{
+		if(skipMissingKeys){
+			continue;
+		}
+		throw "Missing key at" + items[i];
+	}
     var value = itemSelector ? itemSelector(items[i]) : items[i];
     res[key] = value;
   }
@@ -18,7 +23,7 @@ var toDictionary = function (items, keySelector, itemSelector) {
   return res;
 }
 
-var toLookup = function(items, keySelector, itemSelector) {
+var toLookup = function(items, keySelector, itemSelector, skipMissingKeys) {
     if(!keySelector)
        throw "Missin keySelector";
     
@@ -31,7 +36,12 @@ var toLookup = function(items, keySelector, itemSelector) {
    {
     var key = keySelector(items[i]);
     if(key === undefined)
+	{
+	   if(skipMissingKeys){
+			continue;
+	  }
       throw "Missing key at" + items[i];
+	}
     var value = itemSelector ? itemSelector(items[i]) : items[i];
     if(!res[key])
       {
@@ -53,11 +63,11 @@ var applyPrototype = function(name, func){
 }
 
 var applyAsArrayPrototypes = function(){
-	applyPrototype("toDictionary", function(keySelector, itemSelector){
-		return toDictionary(this, keySelector, itemSelector);
+	applyPrototype("toDictionary", function(keySelector, itemSelector, skipMissingKeys){
+		return toDictionary(this, keySelector, itemSelector, skipMissingKeys);
 	});
-	applyPrototype("toLookup", function(keySelector, itemSelector){
-		return toLookup(this, keySelector, itemSelector);
+	applyPrototype("toLookup", function(keySelector, itemSelector, skipMissingKeys){
+		return toLookup(this, keySelector, itemSelector, skipMissingKeys);
 	});
 }
 
