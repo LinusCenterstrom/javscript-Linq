@@ -9,7 +9,7 @@ var toDictionary = function (items, keySelector, itemSelector) {
   for(var i = 0; i < items.length; i++)
   {
     var key = keySelector(items[i]);
-    if(!key)
+    if(key === undefined)
       throw "Missing key at" + items[i];
     var value = itemSelector ? itemSelector(items[i]) : items[i];
     res[key] = value;
@@ -30,7 +30,7 @@ var toLookup = function(items, keySelector, itemSelector) {
    for(var i = 0; i < items.length; i++)
    {
     var key = keySelector(items[i]);
-    if(!key)
+    if(key === undefined)
       throw "Missing key at" + items[i];
     var value = itemSelector ? itemSelector(items[i]) : items[i];
     if(!res[key])
