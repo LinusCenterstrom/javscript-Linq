@@ -1,27 +1,25 @@
 {
-  "name": "csharp-enumeration-functions",
-  "version": "1.0.5",
-  "description": "Javascript implementations of a few of the enumerable functions in the Csharp language",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/LinusCenterstrom/javscript-Linq.git"
-  },
-  "publishConfig": {
-    "registry" : "https://registry.npmjs.com/"
-  },
-  "keywords": [
-    "csharp",
-    "linq",
-    "array"
-  ],
-  "author": "Linus Centerström",
-  "license": "BSD-2-Clause",
-  "bugs": {
-    "url": "https://github.com/LinusCenterstrom/javscript-Linq/issues"
-  },
-  "homepage": "https://github.com/LinusCenterstrom/javscript-Linq#readme"
+	"name": "csharp-enumeration-functions",
+	"version": "1.1.4",
+	"description":
+		"Javascript implementations of a few of the enumerable functions in the Csharp language",
+	"main": "index.js",
+	"types": "./types/index.d.ts",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/LinusCenterstrom/javscript-Linq.git"
+	},
+	"publishConfig": {
+		"registry": "https://registry.npmjs.com/"
+	},
+	"keywords": ["csharp", "linq", "array"],
+	"author": "Linus Centerström",
+	"license": "BSD-2-Clause",
+	"bugs": {
+		"url": "https://github.com/LinusCenterstrom/javscript-Linq/issues"
+	},
+	"homepage": "https://github.com/LinusCenterstrom/javscript-Linq#readme"
 }

@@ -1,1 +1,0 @@
-A collection of array functions similar to enumerable functions in Csharp
