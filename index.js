@@ -64,8 +64,30 @@ var distinctBy = function(items, keySelector) {
 	return result;
 };
 
+function groupBy(items, selector) {
+	var res = [];
+	var keyMap = {};
+
+	items.forEach(item => {
+		var key = selector(item);
+		if (!keyMap[key]) {
+			var group = {
+				key: key,
+				items: [item]
+			};
+			keyMap[key] = group;
+			res.push(group);
+		} else {
+			keyMap[key].items.push(item);
+		}
+	});
+
+	return res;
+}
+
 module.exports = exports = {
 	toDictionary: toDictionary,
 	toLookup: toLookup,
-	distinctBy: distinctBy
+	distinctBy: distinctBy,
+	groupBy: groupBy
 };

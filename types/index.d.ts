@@ -38,4 +38,14 @@ declare module "csharp-enumeration-functions" {
 		items: T[],
 		keySelector: (obj: T) => string | number
 	): T[];
+
+	export type ItemGroup<T, K extends string | number> = {
+		key: K;
+		items: T[];
+	};
+
+	export function groupBy<T, K extends string | number>(
+		items: T[],
+		selector: (item: T) => K
+	): ItemGroup<T, K>[];
 }

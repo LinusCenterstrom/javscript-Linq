@@ -1,8 +1,7 @@
 {
 	"name": "csharp-enumeration-functions",
-	"version": "1.1.4",
-	"description":
-		"Javascript implementations of a few of the enumerable functions in the Csharp language",
+	"version": "1.1.5",
+	"description": "Javascript implementations of a few of the enumerable functions in the Csharp language",
 	"main": "index.js",
 	"types": "./types/index.d.ts",
 	"scripts": {
@@ -15,7 +14,11 @@
 	"publishConfig": {
 		"registry": "https://registry.npmjs.com/"
 	},
-	"keywords": ["csharp", "linq", "array"],
+	"keywords": [
+		"csharp",
+		"linq",
+		"array"
+	],
 	"author": "Linus Centerström",
 	"license": "BSD-2-Clause",
 	"bugs": {
