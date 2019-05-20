@@ -68,7 +68,8 @@ function groupBy(items, selector) {
 	var res = [];
 	var keyMap = {};
 
-	items.forEach(item => {
+	for (var i = 0; i < items.length; i++) {
+		var item = items[i];
 		var key = selector(item);
 		if (!keyMap[key]) {
 			var group = {
@@ -80,7 +81,7 @@ function groupBy(items, selector) {
 		} else {
 			keyMap[key].items.push(item);
 		}
-	});
+	}
 
 	return res;
 }

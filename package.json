@@ -1,6 +1,6 @@
 {
 	"name": "csharp-enumeration-functions",
-	"version": "1.1.5",
+	"version": "1.1.7",
 	"description": "Javascript implementations of a few of the enumerable functions in the Csharp language",
 	"main": "index.js",
 	"types": "./types/index.d.ts",
